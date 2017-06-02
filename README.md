@@ -1,39 +1,102 @@
-Kata Supermarket Refactoring
-====
+# Kata Supermarket
 
-The following TDD Kata is a variation on classical [Supermarket Kata](http://codekata.com/kata/kata01-supermarket-pricing/).  
+[Supermarket Kata](http://codekata.com/kata/kata01-supermarket-pricing/).  
 
-In this my own version I used it to get a base of legacy code to be altered with new functionalities. The TDD approach want you to cover the code by tests and then refactor it before start adding features.
+## The kata
 
-How to conduct the kata
---- 
+In Jet Supermarket we have a checkout system that only can do one kind of offers, 
+based on quantities of the same item (eg. 1 apple for 50 cents, 3 apples for 1.20 dollars).  
+A the moment items are priced individually in cents (e.g. 1 apple costs 50 cents), 
+while some items are multipriced: buy _x_ of them, and they’ll cost you _n_ cents.  
 
-* Make your attendees fork this repository and them the legacy code base in the language you like (checkout master branch).  
-* Make them create a new branch for executing the kata.
-* Start asking them adding a new feature in that messy code
-  * they would be cover and refactor existing code before; you can previusly provide them tests if you like
-* Continue adding feature using TDD Test First approach
+In fact the current prices are:  
+
+|Item       | Unit Price  | Special Price |   
+|-----------|-------------|---------------|
+| apple     | 50          | 3 for 130     |   
+| pear      | 30          | 2 for 45      |   
+| pineapple | 220         |               |   
+| banana    | 60          |               |   
 
 
-KataSupermarket
----
+Our checkout accepts items in any order, so that if we scan a pear, a pineapple, 
+and another pear, we’ll recognize the two pear's and price them at 45 cents 
+(for a total price so far of 265 cents).   
+Because the pricing changes frequently, we pass in a set of pricing rules 
+each time we start handling a checkout transaction.  
 
-Implement the code for a checkout system that handles pricing schemes such as "apples cost 50 cents, three apples cost $1.30.  
-In a normal supermarket, things are identified using Stock Keeping Units, or SKUs.   
-In our store, we’ll use individual letters of the alphabet (A, B, C, and so on).  
-Our goods are priced individually.   
-In addition, some items are multipriced: buy n of them, and they’ll cost you y cents.   
-For example, item ‘A’ might cost 50 cents individually,   
-but this week we have a special offer: buy three ‘A’s and they’ll cost you $1.30.   
+## Start small
 
-In fact this week’s prices are:  
+Start making the system able to check individual price: discount will be calculated by hand by the cashier.  
+Then start implementing offers.
 
-|Item   | Unit Price  | Special Price |   
-|---|---|---|
-| A | 50  |  3 for 130 |   
-| B | 30  |  2 for 45 |   
-| C | 20  |   |   
-| D | 15  |   |   
+### The 1<sup>st</sup> User Story
 
-Our checkout accepts items in any order, so that if we scan a B, an A, and another B, we’ll recognize the two B’s and price them at 45 (for a total price so far of 95).   
-Because the pricing changes frequently, we need to be able to pass in a set of pricing rules each time we start handling a checkout transaction.  
+```
+As a cashier, 
+I want a basic checkout system
+so I can let my customers pay for apples
+```
+
+#### Acceptance Criteria
+
+```
+* When I checkout an apple, the system charges 50 cents
+* When I checkout 3 apples, the system charges 150 cents
+```
+
+### The 2<sup>nd</sup> User Story
+
+Implement individual price for other fruits in list: _pear_, _pineapple_, _banana_
+
+```
+As a cashier, 
+I want to add pear, pineapple and banana to the checkout system
+so I can speed up the payment process
+```
+
+#### Acceptance Criteria
+
+```
+* When I checkout 1 pear, the system charges 30 cents
+* When I checkout 1 pineapple, the system charges 220 cents
+* When I checkout 1 banana, the system charges 60 cents
+
+* When I checkout 2 pear, the system charges 60 cents
+* When I checkout 2 pineapple, the system charges 440 cents
+* When I checkout 2 banana, the system charges 120 cents
+```
+
+### The 3<sup>rd</sup> User Story
+
+```
+As a cashier, 
+I want to specify offers for items
+so my customers will pay less for multiple items purchase
+```
+#### Acceptance Criteria
+
+```
+* When I checkout 3 apples, the system charges 130 cents instead of 150
+* When I checkout 2 pears, the system charges 45 cents instead of 60
+* When I checkout 2 pineapple, the system charges 440 cents, as there are no offers for pineapples
+```
+
+### Add some more extra feature
+
+Now, we think that having more items and offers will boost our earnings; so we are asking to:
+* add these items:
+  * mango -> 155 cents
+  * coconut -> 233 cents
+  * strawberry -> 120 cents
+  * orange -> 45 cents
+  * peach -> 40 cents
+
+* implement a new offers system that lets us apply new pricing rules:
+  * 3 x 2 offers (pay 2, get 3)
+  * combo offers (eg. buy 3 apple and you will obtain an additional pear)
+  
+ ...[to be continued]...
+
+
+
