@@ -96,7 +96,15 @@ Now, we think that having more items and offers will boost our earnings; so we a
   * 3 x 2 offers (pay 2, get 3)
   * combo offers (eg. buy 3 apple and you will obtain an additional pear)
   
- ...[to be continued]...
+* implements the cash payment system
+* implements the credit card payment system
+  * the goverment stopped producing 1 and 2 cents coins; every bill/invoice has to be rounded to the nearest multiple of 5, even if paid with debet/credit card
+  * we have to manage the cancellation of a product, because it is damaged or the customer decides to return it (e.g. it costs too much and he didn't realize it)
+
+
+...[to be continued]...
+
+PS: feel free to propose next change request to implement! 😀
 
 
 
