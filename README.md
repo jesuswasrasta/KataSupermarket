@@ -205,7 +205,7 @@ so I can build up the loyalty of my customers
 #### Acceptance Criteria
 
 ```
-Scenario 1: customer buys items with and without applied offers
+Scenario 1: Customer with fidelity card
 
 Background: 
 * Apple is a "fidelity product"
