@@ -11,12 +11,12 @@ while some items are multipriced: buy _x_ of them, and they’ll cost you _n_ ce
 
 In fact the current prices are:  
 
-|Item       | Unit Price  | Special Price |   
+|Item       | Unit Price  | Special Price |
 |-----------|-------------|---------------|
-| apple     | 50          | 3 for 130     |   
-| pear      | 30          | 2 for 45      |   
-| pineapple | 220         |               |   
-| banana    | 60          |               |   
+| apple     | 50          | 3 for 130     |
+| pear      | 30          | 2 for 45      |
+| pineapple | 220         |               |
+| banana    | 60          |               |
 
 
 Our checkout accepts items in any order, so that if we scan a pear, a pineapple, 
@@ -82,6 +82,7 @@ so my customers will pay less for multiple items purchase
 * When I checkout 2 pineapple, the system charges 440 cents, as there are no offers for pineapples
 ```
 
+---
 ### Add some more extra feature
 
 Now, we think that having more items and offers will boost our earnings; so we are asking to:
@@ -101,16 +102,11 @@ Now, we think that having more items and offers will boost our earnings; so we a
   * the goverment stopped producing 1 and 2 cents coins; every bill/invoice has to be rounded to the nearest multiple of 5, even if paid with debet/credit card
   * we have to manage the cancellation of a product, because it is damaged or the customer decides to return it (e.g. it costs too much and he didn't realize it)
 
-
-
-
 ...[to be continued]...
 
 PS: feel free to propose next change request to implement! 😀
 
-
-
-
+---
 ### An example of the Payment System User Story
 
 ```
@@ -131,15 +127,15 @@ Background:
 * When I close the checkout, a fiscal receipt like this is printed to the console:
 ```
 
-  |Item       | Price           |
-  |-----------|-----------------|
-  | apple     | 50x3=~150~ 130  |
-  | pear      | 30x2=~60~ 45    |
-  | pineapple | 220x2=440       |
-  |           |                 |
-  | TOTAL     | 615             |
-  |           |                 |
-  | Goodbye!  |                 |
+|Item       | Price           |
+|-----------|-----------------|
+| apple     | 50x3=~150~ 130  |
+| pear      | 30x2=~60~ 45    |
+| pineapple | 220x2=440       |
+|           |                 |
+| TOTAL     | 615             |
+|           |                 |
+| Goodbye!  |                 |
 
 
 ```
@@ -154,19 +150,17 @@ Background:
 * When I close the checkout, a fiscal receipt like this is printed to the console:
 ```
 
-  |Item       | Price           |
-  |-----------|-----------------|
-  | apple     | 50x3=~150~ 130  |
-  | pear      | 30x2=~60~ 45    |
-  | pineapple | 220x2=440       |
-  | ~pear~    | ~30x2=60 45~    |
-  | pear      | 30x1=30         |
-  |           |                 |
-  | TOTAL     | 600             |
-  |           |                 |
-  | Goodbye!  |                 |
-
-
+|Item       | Price           |
+|-----------|-----------------|
+| apple     | 50x3=~150~ 130  |
+| pear      | 30x2=~60~ 45    |
+| pineapple | 220x2=440       |
+| ~pear~    | ~30x2=60 45~    |
+| pear      | 30x1=30         |
+|           |                 |
+| TOTAL     | 600             |
+|           |                 |
+| Goodbye!  |                 |
 
 
 ```
@@ -183,18 +177,18 @@ Background:
 * I close the transaction, then a fiscal receipt like this is printed to the console:
 ```
 
-  |Item       | Price           |
-  |-----------|-----------------|
-  | pear      | 30              |
-  |           |                 |
-  | TOTAL     | 30              |
-  | --------- | --------------- |
-  | Received  | 100             |
-  | Withdraw  | 70              |
-  |           |                 |
-  | Goodbye!  |                 |
+|Item       | Price           |
+|-----------|-----------------|
+| pear      | 30              |
+|           |                 |
+| TOTAL     | 30              |
+| --------- | --------------- |
+| Received  | 100             |
+| Withdraw  | 70              |
+|           |                 |
+| Goodbye!  |                 |
 
-
+---
 ### An example of the Fidelity card User Story
 
 ```
@@ -226,7 +220,7 @@ Background:
 | pear      | Base price: 30x2=~60~; Offer: 45                            |
 | pineapple | Base price: 220x2=440                                       |
 |           |                                                             |
-| TOTAL     | 602                                                         |
+| TOTAL     | **602**                                                     |
 |           |                                                             |
 |           | Fidelity card: 123456                                       |
 |           |                                                             |
