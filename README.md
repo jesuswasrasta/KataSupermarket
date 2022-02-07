@@ -195,3 +195,40 @@ Background:
   | Goodbye!  |                 |
 
 
+### An example of the Fidelity card User Story
+
+```
+As a cashier, 
+I want to give a loyalty card that applies an additional 10% discount to some "fidelity products"
+so I can build up the loyalty of my customers
+```
+#### Acceptance Criteria
+
+```
+Scenario 1: customer buys items with and without applied offers
+
+Background: 
+* Apple is a "fidelity product"
+* Customer has fidelity card number 123456 (additional 10% discount)
+* There's an offer for apples: 3 apples for 130 cents instead of 150
+* There's an offer for pears: 2 pears for 45 cents instead of 60
+
+* I checked out 3 apples
+* I checked out 2 pears
+* I checked out 2 pineapple
+
+* When I close the checkout, a fiscal receipt like this is printed to the console:
+```
+
+|Item       | Price                                                       |
+|-----------|-------------------------------------------------------------|
+| apple     | Base price: 50x3=~150~; Offer: ~130~; Fidelity: 130-10%=117 |
+| pear      | Base price: 30x2=~60~; Offer: 45                            |
+| pineapple | Base price: 220x2=440                                       |
+|           |                                                             |
+| TOTAL     | 602                                                         |
+|           |                                                             |
+|           | Fidelity card: 123456                                       |
+|           |                                                             |
+| Goodbye!  |                                                             |
+
