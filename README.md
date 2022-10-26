@@ -5,7 +5,7 @@
 ## The kata
 
 In Jet Supermarket we have a checkout system that only can do one kind of offers, 
-based on quantities of the same item (eg. 1 apple for 50 cents, 3 apples for 1.20 dollars).  
+based on quantities of the same item (eg. 1 apple for 50 cents, 3 apples for 1.30 dollars).  
 A the moment items are priced individually in cents (e.g. 1 apple costs 50 cents), 
 while some items are multipriced: buy _x_ of them, and they’ll cost you _n_ cents.  
 
@@ -20,7 +20,7 @@ In fact the current prices are:
 
 
 Our checkout accepts items in any order, so that if we scan a pear, a pineapple, 
-and another pear, we’ll recognize the two pear's and price them at 45 cents 
+and another pear, we’ll recognize the two pears and price them at 45 cents 
 (for a total price so far of 265 cents).   
 Because the pricing changes frequently, we pass in a set of pricing rules 
 each time we start handling a checkout transaction.  
@@ -62,9 +62,9 @@ so I can speed up the payment process
 * When I checkout 1 pineapple, the system charges 220 cents
 * When I checkout 1 banana, the system charges 60 cents
 
-* When I checkout 2 pear, the system charges 60 cents
-* When I checkout 2 pineapple, the system charges 440 cents
-* When I checkout 2 banana, the system charges 120 cents
+* When I checkout 2 pears, the system charges 60 cents
+* When I checkout 2 pineapples, the system charges 440 cents
+* When I checkout 2 bananas, the system charges 120 cents
 ```
 
 ### The 3<sup>rd</sup> User Story
