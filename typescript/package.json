@@ -33,7 +33,7 @@
   "author": "Ferdinando Santacroce <jesuswasrasta@users.noreply.github.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "tslib": "~2.4.1"
+    "tslib": "~2.5.0"
   },
   "volta": {
     "node": "16.13.0"
