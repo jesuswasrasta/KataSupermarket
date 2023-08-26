@@ -4,8 +4,28 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
+
 updates:
+
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/typescript" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    # Disable version updates for npm dependencies
+    open-pull-requests-limit: 0
+    target-branch: "component-updates"
+
+  - package-ecosystem: "nuget"
+    directory: "/csharp"
+    schedule:
+      interval: "monthly"
+    target-branch: "component-updates" 
+
+  - package-ecosystem: maven
+    directory: "/java"
+    schedule:
+      interval: "monthly"
+    ignore:
+      # ignore Maven APIs/SPIs
+      - dependency-name: org.apache.maven:*
+    target-branch: "component-updates" 
