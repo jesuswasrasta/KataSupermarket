@@ -37,7 +37,7 @@ Inspired from [Supermarket Kata](http://codekata.com/kata/kata01-supermarket-pri
 
 ## The kata
 
-In Jet Supermarket we have a checkout system that only can do one kind of offers,
+In Jet Supermarket we have a checkout system that can do only one kind of offer,
 based on quantities of the same item (e.g. 1 apple for 50 cents, 3 apples for 1.30 dollars).  
 At the moment items are priced individually in cents (e.g. 1 apple costs 50 cents),
 while some items are multi-priced: buy _x_ of them, and they’ll cost you _n_ cents.
@@ -59,7 +59,7 @@ each time we start handling a checkout transaction.
 
 ## Start small
 
-Start making the system able to check individual price: for now, cashier will calculate discount by hand.  
+Start making the system able to check an individual price: for now, the cashier will calculate discounts by hand.  
 Then start implementing offers.  
 
 ### The 1<sup>st</sup> User Story
