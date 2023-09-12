@@ -38,8 +38,8 @@ Inspired from [Supermarket Kata](http://codekata.com/kata/kata01-supermarket-pri
 ## The kata
 
 In Jet Supermarket we have a checkout system that can do only one kind of offer,
-based on quantities of the same item (e.g. 1 apple for 50 cents, 3 apples for 1.30 dollars).  
-At the moment items are priced individually in cents (e.g. 1 apple costs 50 cents),
+based on quantity of the same item (e.g., 1 apple for 50 cents, 3 apples for 1.30 dollars).
+At the moment items are priced individually in cents (e.g., 1 apple costs 50 cents),
 while some items are multi-priced: buy _x_ of them, and they’ll cost you _n_ cents.
 
 The current prices are:
@@ -306,7 +306,7 @@ For the sake of simplicity, in this exercise the printer prints its messages to 
 ### User Story: Fidelity Cards
 
 What if the customers has a fidelity card?
-Feel free to add implementation details at runtime (e.g. having a 3rd party serve to check cards validity, 
+Feel free to add implementation details at runtime (e.g., having a 3rd party serve to check cards validity, 
 check the accumulated balance on the card, etc.)
 
 ```markdown
@@ -441,11 +441,11 @@ Now, the supermarket manager thinks that having more items and offers will boost
   * peach -> 40 cents
 
 * implement new offers that lets us apply new pricing rules:
-  * combo offers (e.g. buy 3 apple, and you will obtain an additional pear)
+  * combo offers (e.g., buy 3 apple, and you will obtain an additional pear)
   * fidelity card offers
-  * limited quantity offers (e.g. "you can buy this item at discount price, but max 3 pieces")
+  * limited quantity offers (e.g., "you can buy this item at discount price, but max 3 pieces")
 
-* we have to manage the cancellation of a product, because it is damaged or the customer decides to return it (e.g. it costs too much and he didn't realize it)
+* we have to manage the cancellation of a product, because it is damaged or the customer decides to return it (e.g., it costs too much and he didn't realize it)
 
 * the government stopped producing 1 and 2 cents coins:
   * every bill/invoice has to be rounded to the nearest lower multiple of 5, even if paid with debit/credit card
