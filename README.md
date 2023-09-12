@@ -1,6 +1,6 @@
 # Kata Supermarket
 
-Inspired to [Supermarket Kata](http://codekata.com/kata/kata01-supermarket-pricing/).
+Inspired from [Supermarket Kata](http://codekata.com/kata/kata01-supermarket-pricing/).
 
 ## Table of Contents
 - [Kata Supermarket](#kata-supermarket)
