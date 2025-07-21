@@ -1,0 +1,14 @@
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+
+[project]
+name = "katasupermarket"
+version = "0.1.0"
+description = "A Python 3 version of the KataSupermarket"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = ["pytest"]
