@@ -1,0 +1,28 @@
+{
+    "name": "jesuswasrasta/katasupermarket",
+    "license": "GPL-3.0",
+    "description": "KataSupermarket",
+    "require-dev": {
+        "phpunit/phpunit": "^11",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "authors": [
+        {
+            "name": "Ferdinando Santacroce",
+            "email": "ferdinando.santacroce@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "classmap": [
+            "src/",
+            "tests/"
+        ],
+        "psr-4": {
+            "": ["src/", "tests/"]
+        }
+    }
+}
