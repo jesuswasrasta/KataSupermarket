@@ -1,0 +1,19 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: katasupermarket-php
+    volumes:
+      - .:/app
+      - ./vendor:/app/vendor
+    working_dir: /app
+    environment:
+      - PHP_IDE_CONFIG=serverName=Docker
+      - XDEBUG_MODE=debug,coverage
+      - XDEBUG_CONFIG=client_host=host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    stdin_open: true
+    tty: true
+    command: tail -f /dev/null

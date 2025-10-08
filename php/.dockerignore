@@ -1,0 +1,28 @@
+# Version control
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Dependencies
+vendor/
+
+# Build artifacts
+.phpunit.cache/
+.phpunit.result.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
