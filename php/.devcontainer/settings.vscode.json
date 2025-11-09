@@ -8,7 +8,7 @@
 				"request": "launch",
 				"port": 9003,
 				"pathMappings": {
-					"/workspace": "${workspaceFolder}"
+					"/workspaces/${localWorkspaceFolderBasename}": "${workspaceFolder}"
 				},
 				"log": false,
 				"xdebugSettings": {
@@ -26,7 +26,7 @@
 				"cwd": "${fileDirname}",
 				"port": 9003,
 				"pathMappings": {
-					"/workspace": "${workspaceFolder}"
+					"/workspaces/${localWorkspaceFolderBasename}": "${workspaceFolder}"
 				}
 			},
 			{
@@ -40,7 +40,7 @@
 				"cwd": "${workspaceFolder}",
 				"port": 9003,
 				"pathMappings": {
-					"/workspace": "${workspaceFolder}"
+					"/workspaces/${localWorkspaceFolderBasename}": "${workspaceFolder}"
 				},
 				"env": {
 					"XDEBUG_MODE": "debug,coverage"
@@ -57,7 +57,7 @@
 				"cwd": "${workspaceFolder}",
 				"port": 9003,
 				"pathMappings": {
-					"/workspace": "${workspaceFolder}"
+					"/workspaces/${localWorkspaceFolderBasename}": "${workspaceFolder}"
 				},
 				"env": {
 					"XDEBUG_MODE": "debug,coverage"

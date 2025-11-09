@@ -234,15 +234,9 @@ The DevContainer uses the **official Microsoft PHP DevContainer image**:
 
 ### Pre-Configured Features
 
-#### Docker-in-Docker Support
-- ✅ Full Docker CLI and Docker Compose available inside container
-- ✅ Use Docker from within the DevContainer for testing, building images, etc.
-- ✅ Access host Docker daemon (no nested virtualization)
-- ✅ Docker Buildx enabled for multi-platform builds
-
 #### Debugging (Xdebug)
 - ✅ Port 9003 configured and forwarded
-- ✅ Path mappings set up (`/workspace` ↔ local workspace)
+- ✅ Path mappings set up (`/workspaces/php` ↔ local workspace)
 - ✅ Launch configurations ready (press F5)
 - ✅ Works with PHPUnit tests
 
@@ -993,7 +987,7 @@ docker compose up -d
 │  │  │ Git (pre-installed)                         │  │  │
 │  │  └─────────────────────────────────────────────┘  │  │
 │  │                                                   │  │
-│  │  Project: /workspace (mounted from host)         │  │
+│  │  Project: /workspaces/php (auto-mounted)         │  │
 │  │  User: vscode (non-root)                         │  │
 │  └───────────────────────────────────────────────────┘  │
 │                                                         │

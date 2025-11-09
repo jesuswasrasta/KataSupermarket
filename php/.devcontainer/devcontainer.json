@@ -4,21 +4,6 @@
 	// Use official PHP image with XDebug (Debian 13 Trixie)
 	"image": "mcr.microsoft.com/devcontainers/php:8.3-trixie",
 
-	// Mount the workspace folder
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-	"workspaceFolder": "/workspace",
-
-	// Enable Docker-in-Docker for projects that need Docker support
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"moby": true,
-			"azureDnsAutoDetection": true,
-			"installDockerBuildx": true,
-			"version": "latest",
-			"dockerDashComposeVersion": "v2"
-		}
-	},
-
 	// Configure tool-specific properties
 	"customizations": {
 		"vscode": {
