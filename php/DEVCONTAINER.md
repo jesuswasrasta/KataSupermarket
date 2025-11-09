@@ -220,7 +220,7 @@ The DevContainer uses the **official Microsoft PHP DevContainer image**:
 **Essential PHP Development:**
 - **Intelephense** - PHP IntelliSense and code completion
 - **PHP Debug** - Xdebug integration for debugging
-- **PHP CodeSniffer** - PSR-12 code style checking
+- **PHP Sniffer** (wongjn.php-sniffer) - PSR-12 code style checking & auto-formatting
 - **PHPStan** - Static analysis integration
 - **PHPUnit Test Explorer** - Run and debug tests visually
 
@@ -230,7 +230,15 @@ The DevContainer uses the **official Microsoft PHP DevContainer image**:
 
 **Total: 7 essential extensions** (no bloat!)
 
+**Note:** We use wongjn.php-sniffer instead of the deprecated ikappas.phpcs extension.
+
 ### Pre-Configured Features
+
+#### Docker-in-Docker Support
+- ✅ Full Docker CLI and Docker Compose available inside container
+- ✅ Use Docker from within the DevContainer for testing, building images, etc.
+- ✅ Access host Docker daemon (no nested virtualization)
+- ✅ Docker Buildx enabled for multi-platform builds
 
 #### Debugging (Xdebug)
 - ✅ Port 9003 configured and forwarded

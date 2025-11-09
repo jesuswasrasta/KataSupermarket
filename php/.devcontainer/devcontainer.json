@@ -8,6 +8,17 @@
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace",
 
+	// Enable Docker-in-Docker for projects that need Docker support
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"moby": true,
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "v2"
+		}
+	},
+
 	// Configure tool-specific properties
 	"customizations": {
 		"vscode": {
@@ -17,7 +28,7 @@
 				"xdebug.php-debug",
 
 				// Code Quality
-				"ikappas.phpcs",
+				"wongjn.php-sniffer",
 				"sanderronde.phpstan-vscode",
 
 				// Testing
@@ -38,10 +49,10 @@
 				// Intelephense
 				"intelephense.telemetry.enabled": false,
 
-				// PHP CS (Code Sniffer)
-				"phpcs.enable": true,
-				"phpcs.standard": "PSR12",
-				"phpcs.executablePath": "${workspaceFolder}/vendor/bin/phpcs",
+				// PHP Sniffer (Code Sniffer & Beautifier)
+				"phpSniffer.standard": "PSR12",
+				"phpSniffer.executablesFolder": "${workspaceFolder}/vendor/bin/",
+				"phpSniffer.autoDetect": true,
 
 				// PHPStan
 				"phpstan.enabled": true,
