@@ -1,8 +1,8 @@
 {
 	"name": "KataSupermarket PHP",
 
-	// Use official PHP image with Xdebug pre-installed
-	"image": "mcr.microsoft.com/devcontainers/php:8.3-bookworm",
+	// Use official PHP image with XDebug (Debian 13 Trixie)
+	"image": "mcr.microsoft.com/devcontainers/php:8.3-trixie",
 
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 

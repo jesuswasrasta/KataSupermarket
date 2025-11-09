@@ -187,14 +187,14 @@ Yes! You can have the project open in multiple IDEs at once - all use the same D
 
 ## What's Included
 
-### Base Container (Debian Bookworm Stable)
+### Base Container (Debian 13 Trixie Stable)
 
 The DevContainer uses the **official Microsoft PHP DevContainer image**:
 
 - **PHP 8.3** (pre-installed)
 - **Composer 2.x** (pre-installed)
 - **Git** (pre-installed)
-- **Debian 12 (Bookworm)** - Stable, no custom builds
+- **Debian 13 (Trixie)** - Latest stable, no custom builds
 - **Non-root user** (`vscode` user for security)
 
 **Why this approach?**
@@ -371,7 +371,7 @@ The project uses a modular configuration approach to avoid duplication:
 **Used by:** All IDEs (VSCode, Cursor, and other DevContainer-compatible editors)
 
 **Contains:**
-- Official Microsoft PHP 8.3 Debian Bookworm image
+- Official Microsoft PHP 8.3 Debian 13 (Trixie) image
 - Shared PHP extensions (Intelephense, PHP Debug, PHPStan, etc.)
 - Shared PHP settings (PSR-12, Xdebug configuration)
 - Port forwarding (9003 for Xdebug)
@@ -549,7 +549,7 @@ The base DevContainer is intentionally **minimal**. Here's how to add your custo
 ### Philosophy
 
 **Base configuration** (`devcontainer.json`):
-- Debian 12 (Bookworm) - Stable base
+- Debian 13 (Trixie) - Latest stable base
 - PHP 8.3 - Latest stable version
 - Essential extensions only (7 extensions)
 - No custom builds or compiled tools
@@ -673,13 +673,14 @@ Or for built-in extensions:
 #### Changing PHP Version
 
 ```json
-"image": "mcr.microsoft.com/devcontainers/php:8.4-bookworm"
+"image": "mcr.microsoft.com/devcontainers/php:8.4-trixie"
 ```
 
 Available versions:
-- `8.3-bookworm` (current)
-- `8.4-bookworm` (latest)
-- `8.2-bookworm` (older)
+- `8.3-trixie` (current)
+- `8.4-trixie` (latest)
+- `8.2-trixie` (older)
+- `8.3-bookworm` (Debian 12 - older stable)
 
 #### Adding System Packages
 
@@ -968,7 +969,7 @@ docker compose up -d
 │  ┌───────────────────────▼───────────────────────────┐  │
 │  │         Docker Container (DevContainer)           │  │
 │  │  ┌─────────────────────────────────────────────┐  │  │
-│  │  │ Debian 12 (Bookworm Stable)                 │  │  │
+│  │  │ Debian 13 (Trixie Stable)                   │  │  │
 │  │  │ PHP 8.3 + Xdebug 3.x                        │  │  │
 │  │  │ Composer + PHPUnit + PHPStan + PHPCS        │  │  │
 │  │  │ Git (pre-installed)                         │  │  │
@@ -1071,7 +1072,7 @@ git pull
 This DevContainer setup provides a **simple, stable, portable development environment**:
 
 **Base Setup:**
-- Debian 12 (Bookworm) - Stable
+- Debian 13 (Trixie) - Latest stable
 - PHP 8.3 - Official Microsoft image
 - 7 essential extensions - No bloat
 - No custom builds - Fast setup
