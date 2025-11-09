@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <!-- PHPStorm Docker Configuration Template -->
+  <!-- To use: Copy contents to .idea/php.xml after initial setup -->
+
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration standards="PSR12" tool_path="/app/vendor/bin/phpcs" />
+    </phpcs_settings>
+  </component>
+
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="/app/vendor" />
+    </include_path>
+  </component>
+
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.3">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="/app/phpunit.xml.dist"
+                       custom_loader_path="/app/vendor/autoload.php"
+                       use_configuration_file="true" />
+    </phpunit_settings>
+  </component>
+
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>

@@ -24,6 +24,17 @@
 
 ## Quick Start
 
+### Option 1: DevContainer (Recommended - VSCode/Cursor)
+
+**One-command setup for VSCode or Cursor:**
+1. Open project in VSCode/Cursor
+2. Click "Reopen in Container" when prompted
+3. Start coding! (Everything auto-installs)
+
+See [.devcontainer/README.md](.devcontainer/README.md) for complete DevContainer guide.
+
+### Option 2: Docker Compose (PHPStorm/Manual)
+
 ```bash
 # 1. Start Docker container
 make start
@@ -43,6 +54,8 @@ make shell
 ## Docker Development Environment
 
 This project uses Docker to provide a consistent, portable PHP development environment across different machines.
+
+**🎯 DevContainer Support:** This project includes full DevContainer support for VSCode and Cursor, providing zero-configuration setup. See [.devcontainer/README.md](.devcontainer/README.md) for details.
 
 ### Why Docker?
 
@@ -378,7 +391,7 @@ php/
 │  │  - Navigation                  │                    │   │
 │  └────────────────────────────────┼────────────────────┘   │
 │                                   │                        │
-│  ┌────────────────────────────────▼────────────────────┐   │
+│  ┌───────────────────────────────▼────────────────────┐   │
 │  │            Docker Container                         │   │
 │  │  ┌────────────────────────────────────────────────┐ │   │
 │  │  │ PHP 8.3.26                                     │ │   │

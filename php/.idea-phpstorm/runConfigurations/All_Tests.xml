@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="ProjectRunConfigurationManager">
+  <!-- PHPUnit: Run All Tests -->
+  <configuration default="false" name="All Tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <TestRunner scope="XML">
+      <option name="configurationFilePath" value="$PROJECT_DIR$/phpunit.xml.dist" />
+    </TestRunner>
+    <method v="2" />
+  </configuration>
+</component>

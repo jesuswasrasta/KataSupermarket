@@ -1,0 +1,32 @@
+{
+	"recommendations": [
+		// PHP Extensions
+		"bmewburn.vscode-intelephense-client",
+		"xdebug.php-debug",
+		"zobo.php-intellisense",
+
+		// Code Quality
+		"ikappas.phpcs",
+		"sanderronde.phpstan-vscode",
+
+		// Testing
+		"recca0120.vscode-phpunit",
+
+		// Git
+		"eamodio.gitlens",
+		"mhutchie.git-graph",
+
+		// General Development
+		"EditorConfig.EditorConfig",
+		"streetsidesoftware.code-spell-checker",
+		"wayou.vscode-todo-highlight",
+		"aaron-bond.better-comments",
+
+		// Docker
+		"ms-azuretools.vscode-docker",
+
+		// Markdown
+		"yzhang.markdown-all-in-one",
+		"DavidAnson.vscode-markdownlint"
+	]
+}

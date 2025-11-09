@@ -12,4 +12,6 @@ class KataSupermarketTest extends TestCase
     public function test_Everything_is_OK() : void {
         $this->assertTrue(true);
     }
+
+
 }

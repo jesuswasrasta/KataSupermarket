@@ -6,6 +6,11 @@ RUN apk add --no-cache \
     git \
     unzip \
     bash \
+    zsh \
+    curl \
+    wget \
+    shadow \
+    sudo \
     linux-headers
 
 # Install Xdebug for debugging support

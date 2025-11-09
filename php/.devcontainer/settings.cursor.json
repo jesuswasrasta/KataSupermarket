@@ -1,0 +1,37 @@
+{
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// Cursor-Specific: AI Pair Programming
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			],
+
+			"settings": {
+				// Cursor AI Settings
+				"github.copilot.enable": {
+					"*": true,
+					"php": true,
+					"markdown": true
+				},
+				"github.copilot.advanced": {
+					"debug.overrideEngine": "gpt-4",
+					"inlineSuggestCount": 3
+				},
+
+				// Editor Settings (optimized for Cursor AI)
+				"editor.suggestSelection": "first",
+				"editor.quickSuggestions": {
+					"other": true,
+					"comments": true,
+					"strings": true
+				},
+				"editor.inlineSuggest.enabled": true,
+
+				// Cursor-specific: AI Chat sidebar
+				"workbench.sideBar.location": "left",
+				"workbench.activityBar.visible": true
+			}
+		}
+	}
+}
