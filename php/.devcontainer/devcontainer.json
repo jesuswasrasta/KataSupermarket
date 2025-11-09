@@ -1,33 +1,18 @@
 {
 	"name": "KataSupermarket PHP",
-	"dockerComposeFile": "../docker-compose.yml",
-	"service": "php",
-	"workspaceFolder": "/app",
 
-	// Features to add to the dev container
-	"features": {
-		"ghcr.io/devcontainers/features/git:1": {
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": true,
-			"installOhMyZsh": true,
-			"configureZshAsDefaultShell": true,
-			"username": "vscode",
-			"userUid": "1000",
-			"userGid": "1000"
-		}
-	},
+	// Use official PHP image with Xdebug pre-installed
+	"image": "mcr.microsoft.com/devcontainers/php:8.3-bookworm",
+
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
 	// Configure tool-specific properties
 	"customizations": {
-		// Configure properties specific to VS Code and Cursor
 		"vscode": {
 			"extensions": [
 				// PHP Extensions
 				"bmewburn.vscode-intelephense-client",
 				"xdebug.php-debug",
-				"zobo.php-intellisense",
 
 				// Code Quality
 				"ikappas.phpcs",
@@ -38,20 +23,9 @@
 
 				// Git
 				"eamodio.gitlens",
-				"mhutchie.git-graph",
 
 				// General Development
-				"EditorConfig.EditorConfig",
-				"streetsidesoftware.code-spell-checker",
-				"wayou.vscode-todo-highlight",
-				"aaron-bond.better-comments",
-
-				// Docker
-				"ms-azuretools.vscode-docker",
-
-				// Markdown
-				"yzhang.markdown-all-in-one",
-				"DavidAnson.vscode-markdownlint"
+				"EditorConfig.EditorConfig"
 			],
 
 			"settings": {
@@ -59,46 +33,27 @@
 				"php.validate.executablePath": "/usr/local/bin/php",
 				"php.suggest.basic": false,
 
-				// Intelephense (PHP IntelliSense)
-				"intelephense.stubs": [
-					"apache", "bcmath", "bz2", "calendar", "com_dotnet", "Core", "ctype",
-					"curl", "date", "dba", "dom", "enchant", "exif", "FFI", "fileinfo",
-					"filter", "ftp", "gd", "gettext", "gmp", "hash", "iconv", "imap",
-					"intl", "json", "ldap", "libxml", "mbstring", "meta", "mysqli",
-					"oci8", "odbc", "openssl", "pcntl", "pcre", "PDO", "pdo_ibm",
-					"pdo_mysql", "pdo_pgsql", "pdo_sqlite", "pgsql", "Phar", "posix",
-					"pspell", "random", "readline", "Reflection", "session", "shmop",
-					"SimpleXML", "snmp", "soap", "sockets", "sodium", "SPL", "sqlite3",
-					"standard", "superglobals", "sysvmsg", "sysvsem", "sysvshm", "tidy",
-					"tokenizer", "xml", "xmlreader", "xmlrpc", "xmlwriter", "xsl", "Zend OPcache",
-					"zip", "zlib"
-				],
-				"intelephense.files.maxSize": 5000000,
+				// Intelephense
 				"intelephense.telemetry.enabled": false,
 
 				// PHP CS (Code Sniffer)
 				"phpcs.enable": true,
 				"phpcs.standard": "PSR12",
-				"phpcs.executablePath": "/app/vendor/bin/phpcs",
+				"phpcs.executablePath": "${workspaceFolder}/vendor/bin/phpcs",
 
 				// PHPStan
 				"phpstan.enabled": true,
-				"phpstan.path": "/app/vendor/bin/phpstan",
+				"phpstan.path": "${workspaceFolder}/vendor/bin/phpstan",
 				"phpstan.level": "max",
 
 				// PHPUnit
 				"phpunit.php": "/usr/local/bin/php",
-				"phpunit.phpunit": "/app/vendor/bin/phpunit",
-				"phpunit.args": [
-					"--colors=always"
-				],
+				"phpunit.phpunit": "${workspaceFolder}/vendor/bin/phpunit",
+				"phpunit.args": ["--colors=always"],
 				"phpunit.clearOutputOnRun": true,
 
 				// Editor Settings
 				"editor.formatOnSave": false,
-				"editor.codeActionsOnSave": {
-					"source.fixAll": "never"
-				},
 				"editor.tabSize": 4,
 				"editor.insertSpaces": true,
 				"editor.rulers": [120],
@@ -106,53 +61,20 @@
 				// Files
 				"files.eol": "\n",
 				"files.insertFinalNewline": true,
-				"files.trimTrailingWhitespace": true,
-				"files.exclude": {
-					"**/.git": true,
-					"**/.DS_Store": true,
-					"**/vendor": false,
-					"**/.phpunit.cache": true,
-					"**/.phpunit.result.cache": true
-				},
-
-				// Terminal
-				"terminal.integrated.defaultProfile.linux": "zsh",
-				"terminal.integrated.profiles.linux": {
-					"bash": {
-						"path": "/bin/bash",
-						"icon": "terminal-bash"
-					},
-					"zsh": {
-						"path": "/bin/zsh",
-						"icon": "terminal"
-					}
-				}
+				"files.trimTrailingWhitespace": true
 			}
 		}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally
+	// Forward Xdebug port
 	"forwardPorts": [9003],
-	"portsAttributes": {
-		"9003": {
-			"label": "Xdebug",
-			"onAutoForward": "silent"
-		}
-	},
 
-	// Use 'postCreateCommand' to run commands after the container is created
-	"postCreateCommand": "composer install && echo '\\n✅ DevContainer is ready! Run \"composer test\" to verify setup.'",
+	// Install Xdebug and project dependencies
+	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug && composer install",
 
-	// Run commands after the container starts
-	"postStartCommand": "git config --global --add safe.directory /app",
+	// Configure Xdebug
+	"postStartCommand": "echo 'xdebug.mode=debug,coverage\nxdebug.start_with_request=yes\nxdebug.client_port=9003' > /usr/local/etc/php/conf.d/xdebug.ini",
 
-	// Comment out to connect as root instead
-	"remoteUser": "vscode",
-
-	// Set container environment variables
-	"remoteEnv": {
-		"XDEBUG_MODE": "debug,coverage",
-		"XDEBUG_CONFIG": "client_host=host.docker.internal",
-		"PHP_IDE_CONFIG": "serverName=DevContainer"
-	}
+	// Use non-root user
+	"remoteUser": "vscode"
 }

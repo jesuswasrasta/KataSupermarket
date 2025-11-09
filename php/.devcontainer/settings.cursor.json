@@ -14,10 +14,7 @@
 					"php": true,
 					"markdown": true
 				},
-				"github.copilot.advanced": {
-					"debug.overrideEngine": "gpt-4",
-					"inlineSuggestCount": 3
-				},
+				"github.copilot.editor.enableAutoCompletions": true,
 
 				// Editor Settings (optimized for Cursor AI)
 				"editor.suggestSelection": "first",
@@ -26,11 +23,9 @@
 					"comments": true,
 					"strings": true
 				},
-				"editor.inlineSuggest.enabled": true,
 
-				// Cursor-specific: AI Chat sidebar
-				"workbench.sideBar.location": "left",
-				"workbench.activityBar.visible": true
+				// Inline AI suggestions
+				"editor.inlineSuggest.enabled": true
 			}
 		}
 	}

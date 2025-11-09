@@ -20,7 +20,7 @@ This project includes full **DevContainer** configuration for zero-setup develop
 2. Click "Reopen in Container"
 3. Start coding (all tools auto-install)
 
-**See:** [.devcontainer/README.md](.devcontainer/README.md) for complete DevContainer documentation.
+**See:** [DEVCONTAINER.md](DEVCONTAINER.md) for complete DevContainer documentation.
 
 ### Traditional Docker Setup (PHPStorm/Manual)
 

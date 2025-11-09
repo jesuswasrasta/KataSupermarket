@@ -175,6 +175,5 @@ For DevContainer-based setup (VSCode/Cursor), see:
 ## See Also
 
 - [../README.md](../README.md) - Complete project documentation
-- [../.devcontainer/README.md](../.devcontainer/README.md) - DevContainer guide
-- [../DEVCONTAINER-QUICKSTART.md](../DEVCONTAINER-QUICKSTART.md) - Quick start for all IDEs
+- [../DEVCONTAINER.md](../DEVCONTAINER.md) - Complete DevContainer guide
 - [../CLAUDE.md](../CLAUDE.md) - Development guidelines

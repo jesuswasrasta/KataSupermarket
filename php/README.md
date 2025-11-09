@@ -31,7 +31,7 @@
 2. Click "Reopen in Container" when prompted
 3. Start coding! (Everything auto-installs)
 
-See [.devcontainer/README.md](.devcontainer/README.md) for complete DevContainer guide.
+See [DEVCONTAINER.md](DEVCONTAINER.md) for complete DevContainer guide.
 
 ### Option 2: Docker Compose (PHPStorm/Manual)
 
@@ -55,7 +55,7 @@ make shell
 
 This project uses Docker to provide a consistent, portable PHP development environment across different machines.
 
-**🎯 DevContainer Support:** This project includes full DevContainer support for VSCode and Cursor, providing zero-configuration setup. See [.devcontainer/README.md](.devcontainer/README.md) for details.
+**🎯 DevContainer Support:** This project includes full DevContainer support for VSCode and Cursor, providing zero-configuration setup. See [DEVCONTAINER.md](DEVCONTAINER.md) for details.
 
 ### Why Docker?
 
