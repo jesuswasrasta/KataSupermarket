@@ -204,9 +204,13 @@ The DevContainer uses the **official Microsoft PHP DevContainer image**:
 - ✅ Stable Debian base
 - ✅ Minimal attack surface
 
+### Pre-Installed in Container
+
+- **Xdebug 3.4.6** - Pre-installed in Trixie image (auto-configured for debugging and coverage)
+- **Composer 2.8.12** - Pre-installed
+
 ### Installed During First Launch
 
-- **Xdebug 3.x** - via PECL (for debugging and coverage)
 - **PHPUnit 12.4** - via Composer
 - **PHPStan** - via Composer (max level)
 - **PHP_CodeSniffer** - via Composer (PSR-12)
@@ -659,15 +663,21 @@ Then rebuild: **Command Palette → "Dev Containers: Rebuild Container"**
 
 #### Adding PHP Extensions
 
-Edit `.devcontainer/devcontainer.json` postCreateCommand:
+Xdebug is already pre-installed in the Trixie image. To add other extensions, edit `.devcontainer/devcontainer.json` postCreateCommand:
 
+For PECL extensions:
 ```json
-"postCreateCommand": "pecl install xdebug redis && docker-php-ext-enable xdebug redis && composer install"
+"postCreateCommand": "pecl install redis && docker-php-ext-enable redis && composer install"
 ```
 
-Or for built-in extensions:
+For built-in extensions:
 ```json
-"postCreateCommand": "docker-php-ext-install pdo_mysql && pecl install xdebug && docker-php-ext-enable xdebug && composer install"
+"postCreateCommand": "docker-php-ext-install pdo_mysql && composer install"
+```
+
+Combined example:
+```json
+"postCreateCommand": "docker-php-ext-install pdo_mysql && pecl install redis && docker-php-ext-enable redis && composer install"
 ```
 
 #### Changing PHP Version
@@ -685,10 +695,10 @@ Available versions:
 #### Adding System Packages
 
 ```json
-"postCreateCommand": "apt-get update && apt-get install -y vim htop && pecl install xdebug && docker-php-ext-enable xdebug && composer install"
+"postCreateCommand": "sudo apt-get update && sudo apt-get install -y vim htop && composer install"
 ```
 
-**Note:** Keep it minimal! Only add tools the whole team needs.
+**Note:** Keep it minimal! Only add tools the whole team needs. Use `sudo` since the container runs as non-root `vscode` user.
 
 #### Installing Additional Features
 
@@ -970,7 +980,7 @@ docker compose up -d
 │  │         Docker Container (DevContainer)           │  │
 │  │  ┌─────────────────────────────────────────────┐  │  │
 │  │  │ Debian 13 (Trixie Stable)                   │  │  │
-│  │  │ PHP 8.3 + Xdebug 3.x                        │  │  │
+│  │  │ PHP 8.3 + Xdebug 3.4.6 (pre-installed)      │  │  │
 │  │  │ Composer + PHPUnit + PHPStan + PHPCS        │  │  │
 │  │  │ Git (pre-installed)                         │  │  │
 │  │  └─────────────────────────────────────────────┘  │  │

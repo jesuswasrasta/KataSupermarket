@@ -69,11 +69,11 @@
 	// Forward Xdebug port
 	"forwardPorts": [9003],
 
-	// Install Xdebug and project dependencies
-	"postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug && composer install",
+	// Install project dependencies (Xdebug already included in Trixie image)
+	"postCreateCommand": "composer install",
 
-	// Configure Xdebug
-	"postStartCommand": "echo 'xdebug.mode=debug,coverage\nxdebug.start_with_request=yes\nxdebug.client_port=9003' > /usr/local/etc/php/conf.d/xdebug.ini",
+	// Configure Xdebug for debugging and coverage (update existing xdebug.ini)
+	"postStartCommand": "sudo sed -i 's/xdebug.mode = debug/xdebug.mode = debug,coverage/' /usr/local/etc/php/conf.d/xdebug.ini && sudo sed -i 's/xdebug.client_port = 9000/xdebug.client_port = 9003/' /usr/local/etc/php/conf.d/xdebug.ini && echo 'xdebug.client_host = host.docker.internal' | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini > /dev/null",
 
 	// Use non-root user
 	"remoteUser": "vscode"
