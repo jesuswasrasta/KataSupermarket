@@ -234,7 +234,7 @@ The DevContainer uses the **official Microsoft PHP DevContainer image**:
 
 #### Debugging (Xdebug)
 - ✅ Port 9003 configured and forwarded
-- ✅ Path mappings set up (`/workspaces/KataSupermarket/php` ↔ workspace)
+- ✅ Path mappings set up (`/workspace` ↔ local workspace)
 - ✅ Launch configurations ready (press F5)
 - ✅ Works with PHPUnit tests
 
@@ -985,7 +985,7 @@ docker compose up -d
 │  │  │ Git (pre-installed)                         │  │  │
 │  │  └─────────────────────────────────────────────┘  │  │
 │  │                                                   │  │
-│  │  Project: /workspaces/KataSupermarket/php       │  │
+│  │  Project: /workspace (mounted from host)         │  │
 │  │  User: vscode (non-root)                         │  │
 │  └───────────────────────────────────────────────────┘  │
 │                                                         │

@@ -4,7 +4,9 @@
 	// Use official PHP image with XDebug (Debian 13 Trixie)
 	"image": "mcr.microsoft.com/devcontainers/php:8.3-trixie",
 
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	// Mount the workspace folder
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace",
 
 	// Configure tool-specific properties
 	"customizations": {
